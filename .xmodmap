@@ -1,0 +1,7 @@
+!Remap Caps_Lock as Escape
+remove Lock = Caps_Lock
+keysym Caps_Lock = Escape
+
+! Scroll and break key as music keys
+keycode 78 = XF86AudioPlay
+keycode 127= XF86AudioNext

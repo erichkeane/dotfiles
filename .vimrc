@@ -1,0 +1,24 @@
+:color desert
+set autoindent
+set cindent
+set smarttab
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set number
+set relativenumber
+:highligh Search ctermfg=white
+:highlight ExtraWhitespace ctermbg=yellow guibg=yellow
+:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
+:autocmd BufWritePre * :%s/\s\+$//e
+
+:au BufWinEnter * let w:lineLength=matchadd('ErrorMsg', '\%>100v.\+',-1)
+:highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+
+set nocp
+filetype plugin on
+
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+autocmd CompleteDone * pclose

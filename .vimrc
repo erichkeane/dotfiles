@@ -22,3 +22,10 @@ filetype plugin on
 
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 autocmd CompleteDone * pclose
+
+autocmd filetype cpp nnoremap<F4> :!g++ % -ggdb -o %:r <CR>
+autocmd filetype cpp nnoremap<F5> :!g++ % -ggdb -o %:r && ./%:r <CR>
+autocmd filetype cpp nnoremap<F10> :!g++ % -ggdb -o %:r && cgdb %:r <CR>
+autocmd filetype c nnoremap<F4> :!gcc % -ggdb -o %:r <CR>
+autocmd filetype c nnoremap<F5> :!gcc % -ggdb -o %:r && ./%:r <CR>
+autocmd filetype c nnoremap<F10> :!gcc % -ggdb -o %:r && cgdb %:r <CR>
